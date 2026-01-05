@@ -10,6 +10,12 @@ interface Props {
 }
 
 function NavbarComp({ entries }: Props): ReactNode {
+  const dropdownItems = Object.entries(entries).map(([name, link]) => (
+    <NavDropdown.Item href={link} key={link}>
+      {name}
+    </NavDropdown.Item>
+  ));
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -18,11 +24,14 @@ function NavbarComp({ entries }: Props): ReactNode {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Aircrafts" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">C172</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">B737</NavDropdown.Item>
+              {dropdownItems}
             </NavDropdown>
-            <Nav.Link href="#home">GitHub</Nav.Link>
-            <Nav.Link href="#link">References</Nav.Link>
+            <Nav.Link href="/ref">References</Nav.Link>
+          </Nav>
+          <Nav className="ms-auto">
+            <Nav.Link href="https://github.com/ToothlessOS/SimChecklists">
+              GitHub
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
