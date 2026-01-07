@@ -5,18 +5,12 @@ import NavMain from "./components/NavMain";
 import heroImg from "./assets/profile.png";
 import ChecklistEntry from "./components/ChecklistEntry";
 import type { CheckItem } from "./components/types";
+import entriesAvail from "./checklists/available";
 
 const Home = () => {
   // Set up the entries for the Navbar component and the mainpage.
   // { name to display: link }
-  let entries = {
-    C172: "/C172",
-    "C172(中文)": "/C172_CHN",
-    B737: "/B737",
-    "B737(中文)": "/B737_CHN",
-    A320: "/A320",
-    "A320(中文)": "/A320_CHN",
-  };
+  let entries = entriesAvail;
 
   // Example checklist entry, to display on the home page
   let refChecklistEntry: CheckItem = {

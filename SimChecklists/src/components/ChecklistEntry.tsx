@@ -14,7 +14,7 @@ function ChecklistEntry({ item, checked }: Props): ReactNode {
   return (
     <div className="py-1">
       <div className="flex items-center justify-between">
-        <label className="flex items-center w-full gap-2">
+        <label className="checklist-row">
           <input
             type="checkbox"
             checked={isChecked}
@@ -22,13 +22,17 @@ function ChecklistEntry({ item, checked }: Props): ReactNode {
             className="h-4 w-4 align-middle"
           />
           <span
-            className={`font-medium ${item.highlight ? " text-red-500" : ""}`}
+            className={`checklist-action font-medium${
+              item.highlight ? " text-red-500" : ""
+            }`}
           >
             {" " + item.action}
           </span>
-          <span className="flex-1 border-b border-dotted border-gray-700 mx-2 self-end mb-1 " />
+          <span className="dot-leader" aria-hidden="true" />
           <span
-            className={`font-medium ${item.highlight ? " text-red-500" : ""}`}
+            className={`checklist-expected font-medium${
+              item.highlight ? " text-red-500" : ""
+            }`}
           >
             {item.expected}
           </span>

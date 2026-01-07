@@ -7,10 +7,14 @@ export type CheckItem = {
     highlight?: boolean;
 }
 
-export type Notes = {
+export type CheckNote = {
     id: string;
     description: string;
     section?: string;
     subsection?: string;
     highlight?: boolean;
 }
+
+export type CheckContent = (CheckItem | CheckNote)[];
+
+export type ChecklistData = Record<string, { content: CheckContent; color: string}>;

@@ -1,22 +1,34 @@
 import type { ReactNode } from "react";
-import type { CheckItem } from "./types";
+import type { CheckItem, CheckNote, CheckContent } from "./types";
 import ChecklistEntry from "./ChecklistEntry";
+import ChecklistNote from "./ChecklistNote";
 
 interface Props {
   color: string;
   title: string;
-  items: CheckItem[];
+  items: CheckContent;
 }
 
 function ChecklistSection({ color, title, items }: Props): ReactNode {
   return (
     <div>
-      <div className="p-4" style={{ backgroundColor: color }}>
-        <h2 className="m-0">{title}</h2>
+      <div className={`section-title ${color}`}>
+        <h2 className="section-title__text">{title}</h2>
       </div>
-      {items.map((item) => (
-        <ChecklistEntry key={item.id} item={item} checked={false} />
-      ))}
+
+      {items.map((item) => {
+        if ((item as CheckItem).action !== undefined) {
+          return (
+            <ChecklistEntry
+              item={item as CheckItem}
+              checked={false}
+              key={(item as CheckItem).id}
+            />
+          );
+        } else {
+          return <ChecklistNote item={item as CheckNote} />;
+        }
+      })}
     </div>
   );
 }
