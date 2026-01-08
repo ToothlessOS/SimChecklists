@@ -57,30 +57,35 @@
 
 .checklist-row {
 	display: grid;
-	grid-template-columns: auto auto minmax(0, 1fr) auto;
-	align-items: center;
+	grid-template-columns: auto auto minmax(0, 1fr) minmax(0, auto);
+	align-items: start;
 	width: 100%;
 	column-gap: 0.5rem;
 }
 
 .checklist-row input {
 	margin: 0;
+	align-self: start;
+	margin-top: 0.25em;
 }
 
-.checklist-action,
-.checklist-expected {
+.checklist-action {
 	white-space: nowrap;
+	align-self: start;
 }
 
 .checklist-expected {
 	justify-self: end;
+	align-self: start;
+	text-align: right;
 }
 
 .dot-leader {
 	width: 100%;
 	height: 1px;
-	align-self: center;
-	margin: 0;
+	align-self: start;
+	margin-top: 0.5em;
+	margin-bottom: 0;
 	background-image: radial-gradient(circle, #374151 1px, transparent 1px);
 	background-size: 6px 2px;
 	background-repeat: repeat-x;

@@ -9,7 +9,7 @@ function ChecklistNote({ item }: Props): ReactNode {
   return (
     <>
       <div className="py-1">
-        <div className="flex items-center justify-between">
+        <div className="flex items-start">
           <span
             className={`font-medium ${item.highlight ? " text-red-500" : ""}`}
           >
