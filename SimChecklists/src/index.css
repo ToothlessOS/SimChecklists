@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/*Global Styles*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*Checklist page*/
 .checklist-columns {
 	column-count: 1;
 	column-gap: 1.5rem;
@@ -89,4 +95,136 @@
 	background-image: radial-gradient(circle, #374151 1px, transparent 1px);
 	background-size: 6px 2px;
 	background-repeat: repeat-x;
+}
+
+/*Floating Nav Button*/
+/* backdrop overlay with blur effect */
+.fab-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out;
+  z-index: 999;
+}
+
+.fab-backdrop-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* container fixed to viewport bottom-right */
+.fab-container {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.fab-container > * {
+  pointer-events: auto;
+}
+
+/* actions stack vertically above main button */
+.fab-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-right: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+	opacity 150ms ease-out,
+	transform 150ms ease-out;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: visible;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+}
+
+.fab-actions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fab-actions::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.fab-actions::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fab-actions::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.fab-actions-open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* main floating button */
+.fab-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #1976d2;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* small action buttons */
+.fab-action-btn {
+  min-width: 200px;
+  max-width: 300px;
+  width: auto;
+  min-height: 48px;
+  height: auto;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+.fab-action-btn:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.fab-action-btn:active {
+  transform: translateX(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }

@@ -18,3 +18,5 @@ export type CheckNote = {
 export type CheckContent = (CheckItem | CheckNote)[];
 
 export type ChecklistData = Record<string, { content: CheckContent; color: string}>;
+
+export type ReferenceData = Record<string, string>;

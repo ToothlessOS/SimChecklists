@@ -39,7 +39,7 @@ function ChecklistEntry({ item, checked }: Props): ReactNode {
         </label>
       </div>
       {item.note && (
-        <div className="ml-6 text-[0.7rem] text-gray-500">{item.note}</div>
+        <div className="ml-6 text-[0.8rem] text-gray-500">{item.note}</div>
       )}
     </div>
   );

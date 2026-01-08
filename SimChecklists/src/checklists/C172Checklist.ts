@@ -39,7 +39,7 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "6",
-            "action": "Documents (ARROW)",
+            "action": "Documents (A(R)ROW)",
             "expected": "ON-BOARD"
           },
           {
@@ -69,8 +69,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "12",
-            "action": "Master switch",
-            "expected": "ON (PROP CLEAR)"
+            "action": "Master switch (PROP CLEAR)",
+            "expected": "ON"
           },
           {
             "id": "13",
@@ -94,8 +94,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "17",
-            "action": "Pitot heat",
-            "expected": "ON, CHECK, OFF (ONLY IF REQUIRED)"
+            "action": "Pitot heat (ONLY IF REQUIRED)",
+            "expected": "ON, CHECK, OFF"
           },
           {
             "id": "18",
@@ -119,7 +119,9 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "22",
-            "action": "Magnetic compass deviation card",
+            "action": "Magnetic compass",
+            "note": "& Deviation card",
+
             "expected": "CHECK"
           },
           {
@@ -148,11 +150,6 @@ const C172Checklist: ChecklistData = {
         "color": "bg-green-500",
         "content": [
           {
-            "id": "0",
-            "description": "EMPENNAGE",
-            "highlight": true
-          },
-          {
             "id": "1",
             "action": "General condition",
             "expected": "CHECK"
@@ -165,7 +162,7 @@ const C172Checklist: ChecklistData = {
           {
             "id": "3",
             "action": "Baggage door",
-            "expected": "UN-LOCKED, LATCHED"
+            "expected": "UN-LOCKED & LATCHED"
           },
           {
             "id": "4",
@@ -179,18 +176,18 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "6",
-            "action": "Elevator counterweights",
-            "expected": "CHECK CLEAR"
+            "action": "Elevator & Counter Wts",
+            "expected": "CHECK & CLEAR"
           },
           {
             "id": "7",
             "action": "Trim tab",
-            "expected": "CHECK CLEAR"
+            "expected": "CHECK & CLEAR"
           },
           {
             "id": "8",
             "action": "Rudder",
-            "expected": "CHECK CLEAR"
+            "expected": "CHECK & CLEAR"
           },
           {
             "id": "9",
@@ -203,14 +200,9 @@ const C172Checklist: ChecklistData = {
         "color": "bg-green-500",
         "content": [
           {
-            "id": "0",
-            "description": "RIGHT WING",
-            "highlight": true
-          },
-          {
             "id": "1",
             "action": "General condition",
-            "expected": "CHECK CLEAR"
+            "expected": "CHECK & CLEAR"
           },
           {
             "id": "2",
@@ -219,7 +211,7 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "3",
-            "action": "Aileron counterweights",
+            "action": "Aileron & Counter Wts",
             "expected": "CHECK"
           },
           {
@@ -234,22 +226,22 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "6",
-            "action": "Main gear / brake",
+            "action": "Main gear & brake",
             "expected": "CHECK"
           },
           {
             "id": "7",
-            "action": "Fuel tank sumps",
-            "expected": "5 – DRAIN, NO DRIPS"
+            "action": "Fuel tank sumps (5)",
+            "expected": "DRAIN & NO DRIPS"
           },
           {
             "id": "8",
-            "action": "Fuel tank quantity",
+            "action": "Fuel tank & Quantity",
             "expected": "CHECK"
           },
           {
             "id": "9",
-            "action": "Fuel cap / vent",
+            "action": "Fuel cap & vent",
             "expected": "CHECK"
           },
           {
@@ -263,24 +255,19 @@ const C172Checklist: ChecklistData = {
         "color": "bg-green-500",
         "content": [
           {
-            "id": "0",
-            "description": "NOSE",
-            "highlight": true
-          },
-          {
             "id": "1",
             "action": "General condition / leaks",
             "expected": "CHECK"
           },
           {
             "id": "2",
-            "action": "Fuel drain",
-            "expected": "3 – DRAIN, NO DRIPS"
+            "action": "Fuel drain (3)",
+            "expected": "DRAIN, NO DRIPS"
           },
           {
             "id": "3",
-            "action": "Oil",
-            "expected": "6 QTS – CHECK"
+            "action": "Oil (6 QTS)",
+            "expected": "CHECK"
           },
           {
             "id": "4",
@@ -323,11 +310,6 @@ const C172Checklist: ChecklistData = {
         "color": "bg-green-500",
         "content": [
           {
-            "id": "0",
-            "description": "LEFT WING",
-            "highlight": true
-          },
-          {
             "id": "1",
             "action": "General condition",
             "expected": "CHECK CLEAR"
@@ -354,8 +336,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "6",
-            "action": "Fuel tank sumps",
-            "expected": "5 – DRAIN, NO DRIPS"
+            "action": "Fuel tank sumps (5)",
+            "expected": "DRAIN, NO DRIPS"
           },
           {
             "id": "7",
@@ -364,12 +346,12 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "8",
-            "action": "Fuel tank quantity",
+            "action": "Fuel tank & Auantity",
             "expected": "CHECK"
           },
           {
             "id": "9",
-            "action": "Fuel cap / vent",
+            "action": "Fuel cap & vent",
             "expected": "CHECK"
           },
           {
@@ -379,7 +361,7 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "11",
-            "action": "Aileron counterweights",
+            "action": "Aileron & Counter Wts",
             "expected": "CHECK"
           },
           {
@@ -389,7 +371,7 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "13",
-            "action": "Main gear / brakes",
+            "action": "Main gear & Brakes",
             "expected": "CHECK"
           }
         ]
@@ -399,8 +381,8 @@ const C172Checklist: ChecklistData = {
         "content": [
           {
             "id": "0",
-            "description": "IN COCKPIT",
-            "highlight": true
+            "action": "Tail lock",
+            "expected": "IN COCKPIT"
           },
           {
             "id": "1",
@@ -409,13 +391,13 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "2",
-            "action": "Seats / seat belts",
+            "action": "Seats & seat belts",
             "expected": "SECURE"
           },
           {
             "id": "3",
             "action": "Doors",
-            "expected": "CLOSED, LOCKED"
+            "expected": "CLOSED & LOCKED"
           },
           {
             "id": "4",
@@ -440,28 +422,14 @@ const C172Checklist: ChecklistData = {
           {
             "id": "8",
             "action": "Fuel shutoff",
-            "expected": "IN (ON)"
+            "expected": "IN / ON"
           },
           {
             "id": "9",
             "action": "Brakes",
             "expected": "HOLD"
           },
-          {
-            "id": "10",
-            "action": "Mixture",
-            "expected": "CUTOFF"
-          },
-          {
-            "id": "11",
-            "action": "Throttle",
-            "expected": "OPEN"
-          },
-          {
-            "id": "12",
-            "action": "Master switch",
-            "expected": "ON (PROP CLEAR)"
-          }
+
         ]
       },
       "ENGINE START": {
@@ -469,28 +437,28 @@ const C172Checklist: ChecklistData = {
         "content": [
           {
             "id": "0",
-            "description": "ENGINE START",
-            "highlight": true
+            "action": "Mixture",
+            "expected": "CUTOFF"
           },
           {
             "id": "1",
+            "action": "Throttle",
+            "expected": "1/4\" OPEN"
+          },
+          {
+            "id": "2",
+            "action": "Master switch (PROP CLEAR)",
+            "expected": "ON"
+          },
+          {
+            "id": "3",
             "action": "Fuel pump",
             "expected": "ON"
           },
           {
-            "id": "2",
-            "action": "Prime (cold)",
-            "expected": "3–5 SECS"
-          },
-          {
-            "id": "3",
-            "action": "Prime (warm)",
-            "expected": "2 SECS"
-          },
-          {
             "id": "4",
-            "action": "Prime (hot)",
-            "expected": "0 SECS"
+            "action": "Prime",
+            "expected": "COLD: 3–5 SECS; WARM: 2 SECS; HOT: 0 SECS"
           },
           {
             "id": "5",
@@ -500,7 +468,8 @@ const C172Checklist: ChecklistData = {
           {
             "id": "6",
             "action": "Propeller area",
-            "expected": "CLEAR"
+            "expected": "CLEAR",
+            "highlight": true
           },
           {
             "id": "7",
@@ -527,6 +496,12 @@ const C172Checklist: ChecklistData = {
             "action": "Mixture",
             "expected": "LEAN"
           },
+          
+        ]
+      },
+      "BEFORE TAXI": {
+        "color": "bg-yellow-500",
+        "content": [
           {
             "id": "12",
             "action": "Flaps",
@@ -539,8 +514,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "14",
-            "action": "Transponder",
-            "expected": "1200 VFR, ALT"
+            "action": "Transponder (1200 VFR)",
+            "expected": "ALT"
           },
           {
             "id": "15",
@@ -583,11 +558,6 @@ const C172Checklist: ChecklistData = {
         "color": "bg-yellow-500",
         "content": [
           {
-            "id": "0",
-            "description": "TAXI",
-            "highlight": true
-          },
-          {
             "id": "1",
             "action": "Parking brake",
             "expected": "RELEASED"
@@ -600,18 +570,13 @@ const C172Checklist: ChecklistData = {
           {
             "id": "3",
             "action": "Flight instruments",
-            "expected": "CHECK (TURNS / INDICATIONS)"
+            "expected": "CHECK"
           }
         ]
       },
       "ENGINE RUNUP": {
         "color": "bg-yellow-500",
         "content": [
-          {
-            "id": "0",
-            "description": "ENGINE RUNUP",
-            "highlight": true
-          },
           {
             "id": "1",
             "action": "Brakes",
@@ -624,7 +589,7 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "3",
-            "action": "Mixture (below 3000 ft)",
+            "action": "Mixture (below 3000\')",
             "expected": "RICH"
           },
           {
@@ -639,23 +604,28 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "6",
-            "action": "Magnetos",
-            "expected": "DROP ≤ 150, DIFF ≤ 50"
+            "action": "Magnetos (DROP ≤ 150, DIFF ≤ 50)",
+            "expected": "CHECK"
           },
           {
             "id": "7",
-            "action": "Vacuum",
-            "expected": "4.5–5.5"
+            "action": "Vacuum (4.5\"–5.5\")",
+            "expected": "CHECK"
           },
           {
             "id": "8",
-            "action": "Engine instruments",
+            "action": "Engine indicators",
             "expected": "CHECK"
           },
           {
             "id": "9",
             "action": "Ammeter",
             "expected": "CHECK"
+          },
+          {
+            "id": "9note",
+            "description": "TURN ON ONLY EQUIPMENT & LTS EXPECTED FOR FLT. EXTEND FLAPS ONLY FOR SHORT OR SOFT FIELD T/O.",
+            "highlight": true
           },
           {
             "id": "10",
@@ -667,64 +637,54 @@ const C172Checklist: ChecklistData = {
             "action": "Throttle",
             "expected": "IDLE, THEN 1000 RPM"
           },
-          {
-            "id": "12",
-            "action": "Pitot heat",
-            "expected": "AS REQUIRED"
-          },
-          {
-            "id": "13",
-            "action": "Flight instruments",
-            "expected": "CHECK"
-          },
-          {
-            "id": "14",
-            "action": "Electric trim",
-            "expected": "CHECK"
-          },
-          {
-            "id": "15",
-            "action": "Autopilot",
-            "expected": "OFF"
-          },
-          {
-            "id": "16",
-            "action": "Flight controls",
-            "expected": "CHECK (FULL, FREE, CORRECT)"
-          },
-          {
-            "id": "17",
-            "action": "Trim",
-            "expected": "TAKEOFF"
-          }
         ]
       },
       "BEFORE TAKEOFF": {
         "color": "bg-yellow-500",
         "content": [
           {
+            "id": "-5",
+            "action": "Pitot heat",
+            "expected": "AS REQUIRED"
+          },
+          {
+            "id": "-4",
+            "action": "Flight instruments",
+            "expected": "CHECK"
+          },
+          {
+            "id": "-3",
+            "action": "Electric trim",
+            "expected": "CHECK"
+          },
+          {
+            "id": "-2",
+            "action": "Autopilot",
+            "expected": "OFF"
+          },
+          {
+            "id": "-1",
+            "action": "Flight controls",
+            "expected": "CHECK"
+          },
+          {
             "id": "0",
-            "description": "BEFORE TAKEOFF",
-            "highlight": true
+            "action": "Trim",
+            "expected": "TAKEOFF"
           },
           {
             "id": "1",
-            "action": "Flaps (normal)",
-            "expected": "0–10°"
-          },
-          {
-            "id": "2",
-            "action": "Flaps (short/soft)",
-            "expected": "10°"
+            "action": "Flaps",
+            "expected": "Normal: 0–10°; Short/soft: 10°"
           },
           {
             "id": "3",
-            "action": "Seats / seat belts",
+            "action": "Seats & seat belts",
             "expected": "SECURE, UPRIGHT"
           },
           {
             "id": "4",
-            "action": "Doors / windows",
+            "action": "Doors & windows",
             "expected": "SECURE"
           },
           {
@@ -745,18 +705,14 @@ const C172Checklist: ChecklistData = {
           {
             "id": "8",
             "action": "Lights",
-            "expected": "WHEN CLEARED FOR TAKEOFF, AS APPROPRIATE"
+            "expected": "AS APPROPRIATE",
+            "note": "When cleared for takeoff"
           }
         ]
       },
       "TAKEOFF": {
         "color": "bg-blue-500",
         "content": [
-          {
-            "id": "0",
-            "description": "TAKEOFF",
-            "highlight": true
-          },
           {
             "id": "1",
             "action": "Mixture (below 3000 ft)",
@@ -769,8 +725,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "3",
-            "action": "Power (static)",
-            "expected": "2300–2400 RPM – CHECK"
+            "action": "Power (2300–2400 RPM=Static)",
+            "expected": " – CHECK"
           },
           {
             "id": "4",
@@ -790,18 +746,13 @@ const C172Checklist: ChecklistData = {
           {
             "id": "7",
             "action": "Short field (10° flaps)",
-            "expected": "LIFT-OFF 56 KIAS"
+            "expected": "56 KIAS"
           },
           {
             "id": "8",
-            "action": "Crosswind (0–10° flaps, up to 20 kts)",
-            "expected": "USE AILERON INTO WIND"
+            "action": "Crosswind (up to 20 kts)",
+            "expected": "0–10° flap"
           },
-          {
-            "id": "9",
-            "action": "Flaps",
-            "expected": "RETRACT SLOWLY BY 60 KIAS"
-          }
         ]
       },
       "CLIMB": {
@@ -809,14 +760,19 @@ const C172Checklist: ChecklistData = {
         "content": [
           {
             "id": "0",
-            "description": "CLIMB",
-            "highlight": true
+            "action": "Flaps",
+            "expected": ">60KIAS - RETRACT SLOWLY"
           },
           {
             "id": "1",
-            "action": "Cruise climb",
-            "expected": "80 KIAS (≥ 500 FPM)"
+            "action": "Cruise climb Airspeed",
+            "expected": "80 KIAS / ≥ 500 FPM"
           },
+        ]
+      },
+      "CRUISE": {
+        "color": "bg-blue-500",
+        "content": [
           {
             "id": "2",
             "action": "Power",
@@ -827,40 +783,25 @@ const C172Checklist: ChecklistData = {
             "action": "Mixture",
             "expected": "LEAN AS REQUIRED"
           },
-          {
-            "id": "4",
-            "action": "Fuel selector",
-            "expected": "BOTH"
-          }
-        ]
-      },
-      "CRUISE": {
-        "color": "bg-blue-500",
-        "content": [
-          {
-            "id": "0",
-            "description": "CRUISE",
-            "highlight": true
-          },
-          {
-            "id": "1",
-            "action": "Power",
-            "expected": "REDUCE SLOWLY"
-          },
-          {
-            "id": "2",
-            "action": "Mixture",
-            "expected": "AS REQUIRED (LEAN)"
-          }
         ]
       },
       "DESCENT": {
         "color": "bg-blue-500",
         "content": [
           {
+            "id": "-2",
+            "action": "Fuel selector",
+            "expected": "BOTH"
+          },
+          {
+            "id": "-1",
+            "action": "Power",
+            "expected": "REDUCE SLOWLY"
+          },
+          {
             "id": "0",
-            "description": "DESCENT",
-            "highlight": true
+            "action": "Mixture",
+            "expected": "AS REQUIRED"
           },
           {
             "id": "1",
@@ -874,28 +815,23 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "3",
-            "action": "Seats / seat belts",
-            "expected": "UPRIGHT, SECURE"
+            "action": "Seats & seat belts",
+            "expected": "UPRIGHT & SECURE"
           },
           {
             "id": "4",
             "action": "Cabin power (if equipped)",
             "expected": "OFF"
           },
-          {
-            "id": "5",
-            "action": "Fuel selector",
-            "expected": "BOTH"
-          }
         ]
       },
       "APPROACH / LANDING": {
         "color": "bg-blue-500",
         "content": [
           {
-            "id": "0",
-            "description": "APPROACH / LANDING",
-            "highlight": true
+            "id": "5",
+            "action": "Fuel selector",
+            "expected": "BOTH"
           },
           {
             "id": "1",
@@ -914,8 +850,8 @@ const C172Checklist: ChecklistData = {
           },
           {
             "id": "4",
-            "action": "Crosswind (15 kts)",
-            "expected": "0–20° FLAPS"
+            "action": "Flaps Crosswind >15 kts",
+            "expected": "0–20°"
           },
           {
             "id": "5",
@@ -932,11 +868,6 @@ const C172Checklist: ChecklistData = {
       "AFTER LANDING": {
         "color": "bg-purple-500",
         "content": [
-          {
-            "id": "0",
-            "description": "AFTER LANDING",
-            "highlight": true
-          },
           {
             "id": "1",
             "action": "RPM",
@@ -977,11 +908,7 @@ const C172Checklist: ChecklistData = {
             "action": "Transponder",
             "expected": "1200"
           },
-          {
-            "id": "9",
-            "action": "Call for fuel",
-            "expected": "AS REQUIRED"
-          }
+          
         ]
       },
       "SHUTDOWN": {
@@ -989,8 +916,8 @@ const C172Checklist: ChecklistData = {
         "content": [
           {
             "id": "0",
-            "description": "SHUTDOWN",
-            "highlight": true
+            "action": "Call for fuel",
+            "expected": "AS REQUIRED"
           },
           {
             "id": "1",
@@ -1005,7 +932,12 @@ const C172Checklist: ChecklistData = {
           {
             "id": "3",
             "action": "Mixture",
-            "expected": "CUTOFF (WHEN PROP STOPS)"
+            "expected": "CUTOFF"
+          },
+          {
+            "id": "3note",
+            "description": "WHEN PROP STOPS",
+            "highlight": true
           },
           {
             "id": "4",
@@ -1041,6 +973,405 @@ const C172Checklist: ChecklistData = {
             "id": "10",
             "action": "Tie downs",
             "expected": "SECURE"
+          }
+        ]
+      },
+      "SPEEDS": {
+        "color": "bg-gray-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Vg (0° flaps)",
+            "expected": "68 KIAS"
+          },
+          {
+            "id": "2",
+            "description": "Glide distance approx 1 NM per 600'"
+          },
+          {
+            "id": "3",
+            "action": "Va (2550/1900 lbs)",
+            "expected": "105/90 KIAS"
+          },
+          {
+            "id": "4",
+            "action": "Vfe (10°/>10°)",
+            "expected": "110/85 KIAS"
+          },
+          {
+            "id": "5",
+            "action": "Vy (0°,sea level-10K')",
+            "expected": "74-72 KIAS"
+          },
+          {
+            "id": "6",
+            "action": "Vx (0°,sea level-10K')",
+            "expected": "62-67 KIAS"
+          },
+          {
+            "id": "7",
+            "action": "Vx (10°)",
+            "expected": "56 KIAS"
+          },
+          {
+            "id": "8",
+            "action": "Vs0",
+            "expected": "40 KIAS"
+          },
+          {
+            "id": "9",
+            "action": "Vs1",
+            "expected": "48 KIAS"
+          },
+          {
+            "id": "10",
+            "action": "Crosswind Landing, Flaps Full",
+            "expected": "<15 KNOTS"
+          },
+          {
+            "id": "11",
+            "action": "Crosswind Landing, Flaps 0-10°",
+            "expected": "<20 KTS"
+          }
+        ]
+      },
+      "AIRPLANE SPECS": {
+        "color": "bg-gray-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Usable fuel tabs/full",
+            "expected": "35g/53g"
+          },
+          {
+            "id": "2",
+            "action": "Taxi fuel",
+            "expected": "1.4g"
+          },
+          {
+            "id": "3",
+            "action": "Climb fuel",
+            "expected": "13.0 GPH"
+          },
+          {
+            "id": "4",
+            "action": "Crosswind",
+            "expected": "15 KTS"
+          },
+          {
+            "id": "5",
+            "action": "Maneuvers",
+            "expected": "2100 RPM/90 KTS"
+          },
+          {
+            "id": "6",
+            "action": "Cruise 3000'@71%",
+            "expected": "2500 RPM/115 KTS"
+          },
+          {
+            "id": "7",
+            "action": "Cruise GPH@71% (leaned)",
+            "expected": "9.7 GPH"
+          },
+          {
+            "id": "8",
+            "action": "Max Ramp Wt",
+            "expected": "2208 LBS"
+          },
+          {
+            "id": "9",
+            "action": "Max Takeoff & Lnding Wt",
+            "expected": "2200 LBS"
+          }
+        ]
+      },
+      "EMERGENCY PROCEDURES": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "0",
+            "description": "NOTE: NOT ALL EMERGENCY PROCEDURES ARE HERE",
+            "highlight": true
+          },
+          {
+            "id": "1",
+            "description": "Check POH for additional procedures",
+            "highlight": true
+          }
+        ]
+      },
+      "ENGINE FIRE DURING START": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Starter",
+            "expected": "CONTINUE CRANKING"
+          },
+          {
+            "id": "2",
+            "action": "Mixture",
+            "expected": "CUTOFF"
+          },
+          {
+            "id": "3",
+            "action": "Throttle",
+            "expected": "OPEN"
+          },
+          {
+            "id": "4",
+            "action": "Fuel shutoff",
+            "expected": "PULL OUT"
+          },
+          {
+            "id": "5",
+            "action": "Fuel pump",
+            "expected": "OFF"
+          },
+          {
+            "id": "6",
+            "action": "Magnetos",
+            "expected": "OFF"
+          },
+          {
+            "id": "7",
+            "action": "Standby battery",
+            "expected": "OFF"
+          },
+          {
+            "id": "8",
+            "action": "Master switch",
+            "expected": "OFF"
+          },
+          {
+            "id": "9",
+            "action": "Fire Extinguisher",
+            "expected": "ACTIVATE"
+          }
+        ]
+      },
+      "ENGINE POWER LOSS IN FLIGHT": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Airspeed (0°/ >0°)",
+            "expected": "75/70 KIAS"
+          },
+          {
+            "id": "2",
+            "action": "Landing area",
+            "expected": "IDENTIFY"
+          },
+          {
+            "id": "3",
+            "action": "Radio",
+            "expected": "MAYDAY"
+          },
+          {
+            "id": "4",
+            "action": "Transponder",
+            "expected": "7700"
+          },
+          {
+            "id": "5",
+            "action": "Final approach (30°)",
+            "expected": "70 KIAS"
+          },
+          {
+            "id": "6",
+            "action": "Fuel shutoff",
+            "expected": "PUSH IN"
+          },
+          {
+            "id": "7",
+            "action": "Fuel selector",
+            "expected": "BOTH"
+          },
+          {
+            "id": "8",
+            "action": "Fuel pump",
+            "expected": "ON"
+          },
+          {
+            "id": "9",
+            "action": "Mixture",
+            "expected": "RICH"
+          },
+          {
+            "id": "10",
+            "action": "Magnetos",
+            "expected": "BOTH"
+          },
+          {
+            "id": "11",
+            "action": "Engine gauges",
+            "expected": "CHECK"
+          }
+        ]
+      },
+      "POWER OFF LANDING": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Trim for best glide",
+            "expected": "68 KIAS"
+          },
+          {
+            "id": "2",
+            "action": "Landing area",
+            "expected": "IDENTIFY"
+          },
+          {
+            "id": "3",
+            "action": "Radio",
+            "expected": "MAYDAY"
+          },
+          {
+            "id": "4",
+            "action": "Transponder",
+            "expected": "7700"
+          },
+          {
+            "id": "5",
+            "action": "Final approach (30°)",
+            "expected": "61 KIAS"
+          },
+          {
+            "id": "6",
+            "action": "Mixture",
+            "expected": "CUTOFF"
+          },
+          {
+            "id": "7",
+            "action": "Fuel shutoff",
+            "expected": "PULL OUT"
+          },
+          {
+            "id": "8",
+            "action": "Magnetos",
+            "expected": "OFF"
+          },
+          {
+            "id": "9",
+            "action": "Standby batt",
+            "expected": "OFF"
+          },
+          {
+            "id": "10",
+            "action": "Master switch",
+            "expected": "OFF"
+          },
+          {
+            "id": "11",
+            "action": "Seat belts",
+            "expected": "SECURE"
+          },
+          {
+            "id": "12",
+            "action": "Doors",
+            "expected": "UNLATCH"
+          }
+        ]
+      },
+      "ENGINE FIRE IN FLIGHT": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Mixture",
+            "expected": "CUTOFF"
+          },
+          {
+            "id": "2",
+            "action": "Fuel shutoff",
+            "expected": "PULL OUT"
+          },
+          {
+            "id": "3",
+            "action": "Fuel pump",
+            "expected": "OFF"
+          },
+          {
+            "id": "4",
+            "action": "Throttle",
+            "expected": "CLOSED"
+          },
+          {
+            "id": "5",
+            "action": "Master switch",
+            "expected": "OFF"
+          },
+          {
+            "id": "6",
+            "action": "Cabin heat & air",
+            "expected": "OFF"
+          },
+          {
+            "id": "7",
+            "action": "Speed",
+            "expected": "INCREASE TO EXTINGUISH"
+          },
+          {
+            "id": "8",
+            "action": "Land",
+            "expected": "IMMEDIATELY"
+          }
+        ]
+      },
+      "ELECTRICAL FIRE": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Standby batt",
+            "expected": "OFF"
+          },
+          {
+            "id": "2",
+            "action": "Master switch",
+            "expected": "OFF"
+          },
+          {
+            "id": "3",
+            "action": "Vents, cabin heat & air",
+            "expected": "CLOSED"
+          },
+          {
+            "id": "4",
+            "action": "Fire extinguisher",
+            "expected": "AS NECESSARY"
+          },
+          {
+            "id": "5",
+            "action": "Avionics",
+            "expected": "OFF"
+          },
+          {
+            "id": "6",
+            "action": "Electrical switch",
+            "expected": "OFF"
+          }
+        ]
+      },
+      "LANDING W/O ELEVATOR CONTROL": {
+        "color": "bg-red-500",
+        "content": [
+          {
+            "id": "1",
+            "action": "Trim",
+            "expected": "65 KIAS"
+          },
+          {
+            "id": "2",
+            "action": "Flaps",
+            "expected": "20°"
+          },
+          {
+            "id": "3",
+            "action": "Power",
+            "expected": "USE ONLY POWER TO CLIMB/DESCEND"
           }
         ]
       }

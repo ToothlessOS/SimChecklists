@@ -11,7 +11,7 @@ interface Props {
 
 function ChecklistSection({ color, title, items }: Props): ReactNode {
   return (
-    <div>
+    <div id={title}>
       <div className={`section-title ${color}`}>
         <h2 className="section-title__text">{title}</h2>
       </div>

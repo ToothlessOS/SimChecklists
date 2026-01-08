@@ -17,7 +17,7 @@ const Home = () => {
     id: "ref1",
     action: "Ready for takeoff?",
     expected: "YES!",
-    note: "Toggle to check!",
+    note: "Tips: Toggle to check; Navigation is scrollable!",
     highlight: true,
   };
 
