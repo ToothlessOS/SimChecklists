@@ -15,7 +15,6 @@ jobs:
         working-directory: ./SimChecklists
 
     env:
-      NODE_ENV: production
       DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
       DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
@@ -32,10 +31,12 @@ jobs:
           cache-dependency-path: "./SimChecklists/package-lock.json"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Vite App
         run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: Setup SSH Key
         run: |
