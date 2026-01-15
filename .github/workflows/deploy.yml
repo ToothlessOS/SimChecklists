@@ -47,4 +47,4 @@ jobs:
 
       - name: Deploy via rsync
         run: |
-          rsync -azv --delete --dry-run dist/ deploy-server:${DEPLOY_PATH}/
+          rsync -azv --delete dist/ deploy-server:${DEPLOY_PATH}/
