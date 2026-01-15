@@ -1,0 +1,44 @@
+name: Build and Deploy Vite App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_ENV: production
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Vite App
+        run: npm run build
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf "Host deploy-server\n  HostName ${DEPLOY_HOST}\n  User ${DEPLOY_USER}\n  IdentityFile ~/.ssh/deploy_key\n  StrictHostKeyChecking no\n" >> ~/.ssh/config
+
+      - name: Deploy via rsync
+        run: |
+          rsync -az --delete --dry-run dist/ deploy-server:${DEPLOY_PATH}/

@@ -726,7 +726,7 @@ const C172Checklist: ChecklistData = {
           {
             "id": "3",
             "action": "Power (2300–2400 RPM=Static)",
-            "expected": " – CHECK"
+            "expected": "CHECK"
           },
           {
             "id": "4",
