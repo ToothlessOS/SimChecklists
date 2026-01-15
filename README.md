@@ -115,4 +115,4 @@ const bib = {
 
 5. Commit and push your changes. Create a pull request to the main repository for review.
 
-6. WORK IN PROGRESS: After approval, your checklist will be merged into the main project and deployed to the [https://fly.toothlessos.xyz/](official site <-) with CI/CD pipelines!
+6. WORK IN PROGRESS: After approval, your checklist will be merged into the main project and deployed to the [https://fly.toothlessos.xyz/](official site) with CI/CD pipelines!
