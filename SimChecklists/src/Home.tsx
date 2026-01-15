@@ -2,7 +2,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarComp from "./components/NavbarComp";
 import NavMain from "./components/NavMain";
-import heroImg from "./assets/profile.png";
+import heroImg from "./assets/profile.webp";
 import ChecklistEntry from "./components/ChecklistEntry";
 import type { CheckItem } from "./components/types";
 import entriesAvail from "./checklists/available";
@@ -24,6 +24,7 @@ const Home = () => {
   return (
     <>
       <NavbarComp entries={entries} />
+      <br />
       <h1 className="text-3xl font-bold text-center">
         愛乃ちゃん's EFB Project
       </h1>

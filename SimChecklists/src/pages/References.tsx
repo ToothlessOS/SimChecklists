@@ -19,18 +19,23 @@ function References(): ReactNode {
   return (
     <>
       <NavbarComp entries={entriesAvail} />
+      <br />
       <h1 className="text-3xl font-bold text-center">References</h1>
-      <div className="flex flex-col items-center my-4 space-y-2">
-        <img
-          src={heroImg}
-          alt="Aiino's Picture"
-          className="object-cover object-center w-60 h-80"
-        />
-        <p className="text-center text-gray-500">
-          Image credits: Visual Arts & Key
-        </p>
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex flex-col items-center my-4 space-y-2">
+          <img
+            src={heroImg}
+            alt="Aiino's Picture"
+            className="object-cover object-center w-60 h-80"
+          />
+          <p className="text-center text-gray-500">
+            Image credits: Visual Arts & Key
+          </p>
+        </div>
+        <div className="flex flex-col items-center my-4 space-y-2">
+          {content}
+        </div>
       </div>
-      <div className="flex flex-col items-center my-4 space-y-2">{content}</div>
     </>
   );
 }

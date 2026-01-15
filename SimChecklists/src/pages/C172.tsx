@@ -13,6 +13,7 @@ function C172(): ReactNode {
   return (
     <>
       <NavbarComp entries={entriesAvail} />
+      <br />
       <h1 className="text-xl font-bold text-center">
         Cessna 172 Skyhawk Checklist
       </h1>
