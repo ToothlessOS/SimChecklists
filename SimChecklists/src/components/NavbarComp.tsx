@@ -26,11 +26,11 @@ function NavbarComp({ entries }: Props): ReactNode {
             src={icon}
             width="30"
             height="30"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top me-2"
             alt="site logo"
           />
+          SimChecklists
         </Navbar.Brand>
-        <Navbar.Brand href="/">SimChecklists</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
