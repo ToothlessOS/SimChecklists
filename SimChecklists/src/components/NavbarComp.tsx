@@ -5,6 +5,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import type { ReactNode } from "react";
 
+import icon from "../assets/icon.webp";
+
 interface Props {
   entries: Record<string, string>; // {"Name to display": "Link",}
 }
@@ -19,6 +21,15 @@ function NavbarComp({ entries }: Props): ReactNode {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+        <Navbar.Brand href="#home">
+          <img
+            src={icon}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="site logo"
+          />
+        </Navbar.Brand>
         <Navbar.Brand href="/">SimChecklists</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
