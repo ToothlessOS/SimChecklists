@@ -21,7 +21,7 @@ function NavbarComp({ entries }: Props): ReactNode {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={icon}
             width="30"
