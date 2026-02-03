@@ -207,7 +207,7 @@ const B737NGChecklistCHN: ChecklistData = {
       {
         "id": "5",
         "action": "驾驶舱门",
-        "expected": "松锁"
+        "expected": "锁定"
       },
       {
         "id": "6",
