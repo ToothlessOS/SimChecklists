@@ -71,9 +71,41 @@ export type ChecklistData = Record<
 >; // KEY: Checklist Section Name; VALUE: {content: CheckContent, color: string (tailwind css color class, i.e. bg-green-500)}
 ```
 
-2. Add your checklist page to React Router in `src/App.tsx`:
+2. Add your checklist page in `src/pages/AircraftName.tsx`, and add it to React Router in `src/App.tsx`:
 
 ```typescript
+// AircraftName.tsx
+import "bootstrap/dist/css/bootstrap.min.css";
+import type { ReactNode } from "react";
+import NavbarComp from "../components/NavbarComp";
+import Checklist from "../components/Checklist";
+import type { ChecklistData } from "../components/types";
+import AircraftNameChecklist from "../checklists/AircraftNameChecklist.ts";
+import entriesAvail from "../checklists/available";
+import NavFloat from "../components/NavFloat";
+
+function AircraftIdentifier(): ReactNode {
+  const content = Checklist as ChecklistData;
+
+  return (
+    <>
+      <NavbarComp entries={entriesAvail} />
+      <br />
+      <h1 className="text-xl font-bold text-center">The title of the checklist</h1>
+      <NavFloat content={content} />
+      <div>
+        <Checklist content={content} />
+      </div>
+    </>
+  );
+}
+
+export default AircraftIdentifier;
+
+```
+
+```typescript
+// App.tsx
 import AircraftNameChecklist from "./checklists/AircraftNameChecklist";
 
 ...
@@ -115,4 +147,4 @@ const bib = {
 
 5. Commit and push your changes. Create a pull request to the main repository for review.
 
-6. WORK IN PROGRESS: After approval, your checklist will be merged into the main project and deployed to the official site with CI/CD pipelines!
+6. After approval, your checklist will be merged into the main project and deployed to the official site with CI/CD pipelines!
