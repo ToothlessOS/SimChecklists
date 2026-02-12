@@ -4,21 +4,24 @@ export interface CanvasConfig {
   backgroundImage?: string;
 }
 
+import atisBg from "../assets/atis-bg.png";
+import clearanceBg from "../assets/clearance-bg.png";
+
 export const canvasConfigs: CanvasConfig[] = [
   {
     id: "atis_dep",
     name: "ATIS DEP",
-    backgroundImage: "/src/assets/atis-bg.png", // Uncomment and set path when ready
+    backgroundImage: atisBg,
   },
   {
     id: "clearance",
     name: "Clearance",
-    backgroundImage: "/src/assets/clearance-bg.png",
+    backgroundImage: clearanceBg,
   },
   {
     id: "atis_arr",
     name: "ATIS ARR",
-    backgroundImage: "/src/assets/atis-bg.png", // Uncomment and set path when ready
+    backgroundImage: atisBg,
   },
   {
     id: "log1",
