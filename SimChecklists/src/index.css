@@ -531,3 +531,8 @@ html {
   background: #cc0000;
   border-color: #cc0000;
 }
+
+.ref-url {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

@@ -10,8 +10,11 @@ function References(): ReactNode {
   const ref = bib as ReferenceData;
   const content = Object.entries(ref).map(([name, url]) => {
     return (
-      <p text-center>
-        <strong>{name}:</strong> <a href={url}>{url}</a>
+      <p className="text-center">
+        <strong>{name}:</strong>{" "}
+        <a className="ref-url" href={url}>
+          {url}
+        </a>
       </p>
     );
   });
