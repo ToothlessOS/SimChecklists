@@ -1,6 +1,6 @@
 const entriesAvail = {
-    C172: "/C172",
     B737_NG_CHN: "/B737_NG_CHN",
+    C172: "/C172",
 };
 
 export default entriesAvail;

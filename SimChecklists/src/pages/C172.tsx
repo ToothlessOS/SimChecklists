@@ -6,6 +6,7 @@ import type { ChecklistData } from "../components/types";
 import C172Checklist from "../checklists/C172Checklist";
 import entriesAvail from "../checklists/available";
 import NavFloat from "../components/NavFloat";
+import SketchPad from "../components/SketchPad";
 
 function C172(): ReactNode {
   const content = C172Checklist as ChecklistData;
@@ -18,6 +19,7 @@ function C172(): ReactNode {
         Cessna 172 Skyhawk Checklist
       </h1>
       <NavFloat content={content} />
+      <SketchPad />
       <div>
         <Checklist content={content} />
       </div>

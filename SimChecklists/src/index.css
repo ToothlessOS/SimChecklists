@@ -228,3 +228,273 @@ html {
   transform: translateX(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+
+/*Floating SketchPad Button*/
+/* backdrop overlay with blur effect - higher z-index to appear above NavFloat */
+.sketchpad-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out;
+  z-index: 1001;
+}
+
+.sketchpad-backdrop-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* container fixed to viewport bottom-right, above NavFloat */
+.sketchpad-container {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+.sketchpad-container > * {
+  pointer-events: auto;
+}
+
+/* actions stack vertically above main button */
+.sketchpad-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-right: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+	opacity 150ms ease-out,
+	transform 150ms ease-out;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: visible;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+}
+
+.sketchpad-actions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sketchpad-actions::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.sketchpad-actions::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sketchpad-actions::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.sketchpad-actions-open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* main floating button - purple color to differentiate from NavFloat */
+.sketchpad-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #9c27b0;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sketchpad-main:hover {
+  background: #7b1fa2;
+}
+
+/* canvas overlay - centered with viewport-based dimensions */
+.sketchpad-canvas-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  max-width: 1400px;
+  max-height: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1003;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sketchpad-canvas-header {
+  padding: 16px 20px;
+  background: #9c27b0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sketchpad-canvas-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sketchpad-toolbar {
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sketchpad-divider {
+  width: 1px;
+  height: 24px;
+  background: #bbb;
+  margin: 0 4px;
+}
+
+.sketchpad-canvas-close {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 4px;
+  transition: background 150ms ease;
+}
+
+.sketchpad-canvas-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sketchpad-canvas-body {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Toolbar button styling */
+.sketchpad-toolbar-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #9c27b0;
+  background: white;
+  color: #9c27b0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13ative;
+}
+
+/* Tool button specific styling for sketchpad */
+.sketchpad-tool-btn {
+  min-width: 160px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #9c27b0;
+  background: white;
+  color: #9c27b0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 100ms ease;
+  white-space: nowrap;
+}
+
+.sketchpad-toolbar-btn:hover {
+  background: #f3e5f5;
+  border-color: #7b1fa2;
+}
+
+.sketchpad-toolbar-btn:active {
+  background: #e1bee7;
+}
+
+.sketchpad-toolbar-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sketchpad-toolbar-btn:disabled:hover {
+  background: white;
+  border-color: #9c27b0;
+}
+
+/* Color button variants */
+.sketchpad-color-black {
+  background: #000000;
+  color: white;
+  border-color: #000000;
+}
+
+.sketchpad-color-black:hover {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.sketchpad-color-blue {
+  background: #0000FF;
+  color: white;
+  border-color: #0000FF;
+}
+
+.sketchpad-color-blue:hover {
+  background: #0000cc;
+  border-color: #0000cc;
+}
+
+.sketchpad-color-red {
+  background: #FF0000;
+  color: white;
+  border-color: #FF0000;
+}
+
+.sketchpad-color-red:hover {
+  background: #cc0000;
+  border-color: #cc0000;
+}

@@ -6,6 +6,7 @@ import type { ChecklistData } from "../components/types";
 import B737NGChecklistCHN from "../checklists/B737NGChecklistCHN";
 import entriesAvail from "../checklists/available";
 import NavFloat from "../components/NavFloat";
+import SketchPad from "../components/SketchPad";
 
 function B737_NG_CHN(): ReactNode {
   const content = B737NGChecklistCHN as ChecklistData;
@@ -16,6 +17,7 @@ function B737_NG_CHN(): ReactNode {
       <br />
       <h1 className="text-xl font-bold text-center">Boeing 737NG 快速检查单</h1>
       <NavFloat content={content} />
+      <SketchPad />
       <div>
         <Checklist content={content} />
       </div>

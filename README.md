@@ -83,6 +83,7 @@ import type { ChecklistData } from "../components/types";
 import AircraftNameChecklist from "../checklists/AircraftNameChecklist.ts";
 import entriesAvail from "../checklists/available";
 import NavFloat from "../components/NavFloat";
+import SketchPad from "../components/SketchPad";
 
 function AircraftIdentifier(): ReactNode {
   const content = Checklist as ChecklistData;
@@ -93,6 +94,7 @@ function AircraftIdentifier(): ReactNode {
       <br />
       <h1 className="text-xl font-bold text-center">The title of the checklist</h1>
       <NavFloat content={content} />
+      <SketchPad />
       <div>
         <Checklist content={content} />
       </div>
