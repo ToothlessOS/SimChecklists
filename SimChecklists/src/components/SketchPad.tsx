@@ -8,6 +8,7 @@ import {
   FiTrash,
   FiSave,
 } from "react-icons/fi";
+import { canvasConfigs } from "./sketchPadConfig";
 import { FaEraser, FaPen } from "react-icons/fa";
 import {
   ReactSketchCanvas,
@@ -17,35 +18,56 @@ import { useRef, useState, useEffect } from "react";
 
 function SketchPad(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeCanvasId, setActiveCanvasId] = useState("atis_dep");
 
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
   const [eraseMode, setEraseMode] = useState(false);
   const [strokeColor, setStrokeColor] = useState("#000000");
 
-  // Load canvas from localStorage when overlay opens
+  // Load canvas from localStorage when overlay opens or canvas changes
   useEffect(() => {
     if (isOpen && canvasRef.current) {
-      const savedCanvas = localStorage.getItem("sketchpad-canvas");
-      if (savedCanvas) {
+      // Always reset canvas first to prevent content carryover
+      canvasRef.current.resetCanvas();
+
+      const savedCanvases = localStorage.getItem("sketchpad-canvases");
+      if (savedCanvases) {
         try {
-          canvasRef.current.loadPaths(JSON.parse(savedCanvas));
+          const canvasData = JSON.parse(savedCanvases);
+          if (canvasData[activeCanvasId]) {
+            canvasRef.current.loadPaths(canvasData[activeCanvasId]);
+          }
         } catch (error) {
           console.error("Failed to load saved canvas:", error);
         }
       }
     }
-  }, [isOpen]);
+  }, [isOpen, activeCanvasId]);
 
   // Save canvas to localStorage
   const saveCanvas = async () => {
     try {
       const paths = await canvasRef.current?.exportPaths();
       if (paths) {
-        localStorage.setItem("sketchpad-canvas", JSON.stringify(paths));
+        const savedCanvases = localStorage.getItem("sketchpad-canvases");
+        const canvasData = savedCanvases ? JSON.parse(savedCanvases) : {};
+        canvasData[activeCanvasId] = paths;
+        localStorage.setItem("sketchpad-canvases", JSON.stringify(canvasData));
       }
     } catch (error) {
       console.error("Failed to save canvas:", error);
     }
+  };
+
+  // Switch canvas
+  const handleCanvasChange = async (newCanvasId: string) => {
+    if (newCanvasId === activeCanvasId) return;
+
+    // Save current canvas before switching
+    await saveCanvas();
+
+    // Switch to new canvas
+    setActiveCanvasId(newCanvasId);
   };
 
   // Close and save
@@ -89,7 +111,16 @@ function SketchPad(): ReactNode {
 
   const handleResetClick = () => {
     canvasRef.current?.resetCanvas();
-    localStorage.removeItem("sketchpad-canvas");
+    const savedCanvases = localStorage.getItem("sketchpad-canvases");
+    if (savedCanvases) {
+      try {
+        const canvasData = JSON.parse(savedCanvases);
+        delete canvasData[activeCanvasId];
+        localStorage.setItem("sketchpad-canvases", JSON.stringify(canvasData));
+      } catch (error) {
+        console.error("Failed to reset canvas:", error);
+      }
+    }
   };
 
   const handleExportClick = async () => {
@@ -118,7 +149,17 @@ function SketchPad(): ReactNode {
       {isOpen && (
         <div className="sketchpad-canvas-overlay">
           <div className="sketchpad-canvas-header">
-            <h2>Sketch Pad</h2>
+            <select
+              className="sketchpad-canvas-selector"
+              value={activeCanvasId}
+              onChange={(e) => handleCanvasChange(e.target.value)}
+            >
+              {canvasConfigs.map((config) => (
+                <option key={config.id} value={config.id}>
+                  {config.name}
+                </option>
+              ))}
+            </select>
             <button className="sketchpad-canvas-close" onClick={handleClose}>
               <FiX />
             </button>
@@ -204,9 +245,15 @@ function SketchPad(): ReactNode {
               ref={canvasRef}
               strokeColor={strokeColor}
               strokeWidth={4}
+              eraserWidth={12}
               width="100%"
               height="100%"
               canvasColor="transparent"
+              backgroundImage={
+                canvasConfigs.find((c) => c.id === activeCanvasId)
+                  ?.backgroundImage
+              }
+              preserveBackgroundImageAspectRatio="xMidYMin"
             />
           </div>
         </div>

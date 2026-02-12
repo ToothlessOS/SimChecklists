@@ -353,7 +353,7 @@ html {
 }
 
 .sketchpad-canvas-header {
-  padding: 16px 20px;
+  padding: 8px 16px;
   background: #9c27b0;
   color: white;
   display: flex;
@@ -366,6 +366,39 @@ html {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.sketchpad-canvas-selector {
+  padding: 10px 32px 10px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+}
+
+.sketchpad-canvas-selector:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.sketchpad-canvas-selector:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.sketchpad-canvas-selector option {
+  background: #9c27b0;
+  color: white;
+  padding: 8px;
 }
 
 .sketchpad-toolbar {
@@ -413,7 +446,7 @@ html {
 
 /* Toolbar button styling */
 .sketchpad-toolbar-btn {
-  padding: 6px 12px;
+  padding: 10px 14px;
   border-radius: 4px;
   border: 1px solid #9c27b0;
   background: white;
@@ -429,7 +462,7 @@ html {
 /* Tool button specific styling for sketchpad */
 .sketchpad-tool-btn {
   min-width: 160px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   border-radius: 8px;
   border: 2px solid #9c27b0;
   background: white;
