@@ -1,0 +1,19 @@
+# Caddy reverse proxy config for SimChecklists
+# Usage: place this as your Caddyfile (or in a site block), then run `caddy adapt` and `caddy run`.
+#
+# The frontend calls /api/weather/* which Caddy forwards to
+# https://aviationweather.gov/api/data/* — bypassing CORS.
+
+your-domain.com {  # replace with your domain
+    root * /var/www/simchecklists/dist  # path to your built static files
+    try_files {path} {path}/ /index.html
+
+    # Proxy Aviation Weather API requests to avoid CORS
+    handle /api/weather/* {
+        reverse_proxy https://aviationweather.gov/api/data {
+            header_up Host aviationweather.gov
+        }
+    }
+
+    file_server
+}

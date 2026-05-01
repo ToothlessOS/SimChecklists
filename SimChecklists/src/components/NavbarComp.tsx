@@ -37,6 +37,7 @@ function NavbarComp({ entries }: Props): ReactNode {
             <NavDropdown title="Aircrafts" id="basic-nav-dropdown">
               {dropdownItems}
             </NavDropdown>
+            <Nav.Link href="/weather">METAR</Nav.Link>
             <Nav.Link href="/ref">References</Nav.Link>
           </Nav>
           <Nav className="ms-auto">

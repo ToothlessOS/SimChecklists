@@ -3,23 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarComp from "./components/NavbarComp";
 import NavMain from "./components/NavMain";
 import heroImg from "./assets/profile.webp";
-import ChecklistEntry from "./components/ChecklistEntry";
-import type { CheckItem } from "./components/types";
+import weatherAdvertImg from "./assets/weather_advert.webp";
 import entriesAvail from "./checklists/available";
 
 const Home = () => {
   // Set up the entries for the Navbar component and the mainpage.
   // { name to display: link }
-  let entries = entriesAvail;
-
-  // Example checklist entry, to display on the home page
-  let refChecklistEntry: CheckItem = {
-    id: "ref1",
-    action: "Ready for takeoff?",
-    expected: "YES!",
-    note: "Tips: Toggle to check; Navigation is scrollable!",
-    highlight: true,
-  };
+  const entries = entriesAvail;
 
   return (
     <>
@@ -44,8 +34,14 @@ const Home = () => {
         <NavMain entries={entries} />
       </div>
 
-      <div className="flex items-center justify-center flex-wrap my-4">
-        <ChecklistEntry checked={false} item={refChecklistEntry} />
+      <div className="flex items-center justify-center my-6 pb-8">
+        <a href="/weather">
+          <img
+            src={weatherAdvertImg}
+            alt="METAR Weather Search"
+            className="object-cover object-center w-96 h-48 cursor-pointer"
+          />
+        </a>
       </div>
     </>
   );
