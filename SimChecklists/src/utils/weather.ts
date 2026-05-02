@@ -266,6 +266,7 @@ export interface MetarData {
   fltCat?: string;
 }
 
+// Legacy parse metar function, not used currently but kept for reference
 export function parseMetar(metarData: MetarData): string {
   try {
     // Raw report
